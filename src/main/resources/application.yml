@@ -19,3 +19,9 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     generate-ddl: true # 데이터베이스 직접 변경하기 때문에 실제로는 false로 사용
+    
+ logging:
+  level:
+    org:
+      hibernate:
+        type: trace
