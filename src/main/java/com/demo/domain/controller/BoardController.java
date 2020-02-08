@@ -1,5 +1,6 @@
 package com.demo.domain.controller;
 
+import com.demo.domain.dto.PostBoardRequestDto;
 import com.demo.domain.entity.BoardEntity;
 import com.demo.domain.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,10 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/save/{id}")
-    public void updateBoard(@RequestBody BoardEntity board) throws Exception{
-       boardService.saveBoard(board);
+    public void updateBoard(@RequestBody BoardEntity board, @PathVariable("id") int id) throws Exception{
+//        PostBoardRequestDto postBoardRequestDto = new PostBoardRequestDto();
+        board.setId(id);
+        boardService.saveBoard(board);
     }
 
     @RequestMapping(value = "/delete/{id}")

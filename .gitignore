@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+#db 정보 업로드 방지
+.application.yml

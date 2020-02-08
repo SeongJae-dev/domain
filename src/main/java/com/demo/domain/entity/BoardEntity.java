@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="jpa_notice")
 @NoArgsConstructor
-//@Data
-@Getter
+@Data
+//@Getter
 public class BoardEntity {
 
     @Id
@@ -23,13 +23,13 @@ public class BoardEntity {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String content;
 
     @Column(nullable = false)
     private int hitcnt=0;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String createId;
 
     private LocalDateTime createDateTime = LocalDateTime.now();

@@ -1,6 +1,7 @@
 package com.demo.domain.service;
 
 
+import com.demo.domain.dto.PostBoardRequestDto;
 import com.demo.domain.entity.BoardEntity;
 
 import java.util.List;
