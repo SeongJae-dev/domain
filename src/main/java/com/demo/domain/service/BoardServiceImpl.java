@@ -25,7 +25,6 @@ public class BoardServiceImpl implements BoardService {
     public List<BoardEntity> selectBoardList() throws Exception {
         return boardRepository.findAll();
     }
-
     @Override
     public BoardEntity selectBoardDetail(long id) throws Exception {
 //        Optional<BoardEntity> optional = boardRepository.findById(id);
