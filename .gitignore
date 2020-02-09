@@ -32,3 +32,6 @@ build/
 
 #db 정보 업로드 방지
 .application.yml
+
+#querydsl Qclass
+genrated

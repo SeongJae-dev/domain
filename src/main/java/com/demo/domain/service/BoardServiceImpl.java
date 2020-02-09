@@ -27,7 +27,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public BoardEntity selectBoardDetail(int id) throws Exception {
+    public BoardEntity selectBoardDetail(long id) throws Exception {
 //        Optional<BoardEntity> optional = boardRepository.findById(id);
         Optional<BoardEntity> optional = boardRepository.findById(id);
         if (optional.isPresent()) {
@@ -53,14 +53,14 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void saveBoard(BoardEntity board) throws Exception {
-        System.out.println("board log");
-        System.out.println("====================");
+        logger.info("board log");
+        logger.info("====================");
         boardRepository.save(board);
     }
 
 
     @Override
-    public void deleteBoard(int id) {
-        boardRepository.deleteById(id);
+    public void deleteBoard(long id) {
+        boardRepository.deleteById( id);
     }
 }

@@ -17,32 +17,33 @@ public class BoardController {
     private BoardService boardService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<BoardEntity> BoardList(Map param) throws Exception{
+    public List<BoardEntity> BoardList() throws Exception{
         return  boardService.selectBoardList();
     }
 
     @RequestMapping(value = "/info/{id}", method = RequestMethod.GET)
-    public BoardEntity BoardInfo(@PathVariable("id") int id) throws Exception{
+    public BoardEntity BoardInfo(@PathVariable("id") long id) throws Exception{
         return boardService.selectBoardDetail(id);
     }
 
-    @RequestMapping(value = "/save")
-    public void saveBoard(@RequestBody BoardEntity board) throws Exception{
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public void SaveBoard(@RequestBody BoardEntity board) throws Exception{
 //        board.setContent("TestJpa_centent");
 //        board.setTitle("TestJpa_Title");
 //        board.setCreateId("TestJpa_Tester");
         boardService.saveBoard(board);
     }
 
-    @RequestMapping(value = "/save/{id}")
-    public void updateBoard(@RequestBody BoardEntity board, @PathVariable("id") int id) throws Exception{
+    @RequestMapping(value = "/save/{id}", method = RequestMethod.PUT)
+    public void UpdateBoard(@RequestBody BoardEntity board, @PathVariable("id") long id) throws Exception{
 //        PostBoardRequestDto postBoardRequestDto = new PostBoardRequestDto();
         board.setId(id);
         boardService.saveBoard(board);
     }
 
-    @RequestMapping(value = "/delete/{id}")
-    public void deleteBoard(@PathVariable("id") int id) throws  Exception{
+    //{id} 값을 받을떄는 @PathVariable, ?id=? 일때는RequestParam
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public void deleteBoard(@PathVariable("id") long id) throws  Exception{
         boardService.deleteBoard(id);
     }
 }

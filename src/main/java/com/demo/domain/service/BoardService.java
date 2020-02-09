@@ -10,11 +10,11 @@ public interface BoardService {
 
         List<BoardEntity> selectBoardList() throws Exception;
 
-        BoardEntity selectBoardDetail(int id) throws Exception;
+        BoardEntity selectBoardDetail(long id) throws Exception;
 
         void saveBoard(BoardEntity board) throws Exception;
 
         //void updateBoard(BoardEntity boardEntity) throws Exception;
 
-        void deleteBoard(int id) throws Exception;
+        void deleteBoard(long id) throws Exception;
 }

@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -18,7 +17,7 @@ public class BoardEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
     @Column(nullable = false)
     private String title;
@@ -29,13 +28,17 @@ public class BoardEntity {
     @Column(nullable = false)
     private int hitcnt=0;
 
-//    @Column(nullable = false)
-    private String createId;
+    @Column(name="create_id")
+    private long createId;
 
     private LocalDateTime createDateTime = LocalDateTime.now();
 
+//    @ManyToOne
+//    @JoinColumn(name = "create_id",foreignKey = @ForeignKey(name = "fk_id" ))
+//    private UserEntity userEntity;
+
     @Builder
-    public BoardEntity(String title, String content, String createId,int hitcnt){
+    public BoardEntity(String title, String content, long createId,int hitcnt){
         this.title = title;
         this.content = content;
         this.createId = createId;

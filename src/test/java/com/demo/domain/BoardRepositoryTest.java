@@ -20,9 +20,9 @@ public class BoardRepositoryTest {
     @Test
     public void saveTest() throws Exception {
         boardService.saveBoard(BoardEntity.builder()
-        .title("testMethods")
-        .content("testMethods")
-        .createId("3")
+        .title("testMethods3")
+        .content("testMethods3")
+        .createId(1)
         .build());
     }
 
@@ -33,7 +33,7 @@ public class BoardRepositoryTest {
 
     @Test
     public void getBoardDetail(){
-        boardRepository.findById(1);
+//        boardRepository.findById(1);
     }
 
 }
