@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "main", description = "Home controller")
 public class HomeController {
 
-    @RequestMapping("/")
-    public String Home(){
-        return "Hello Test API";
-    }
+//    @RequestMapping("/")
+//    public String Home(){
+//        return "Hello Test API";
+//    }
 
 }
