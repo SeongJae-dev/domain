@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(value = "/api/board")
 public class BoardController {
 
