@@ -57,9 +57,13 @@ public class BoardServiceImpl implements BoardService {
         boardRepository.save(board);
     }
 
-
     @Override
     public void deleteBoard(long id) {
         boardRepository.deleteById( id);
     }
+
+    @Override
+    public void deleteAll(){ boardRepository.deleteAll();};
 }
+
+

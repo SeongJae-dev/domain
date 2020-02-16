@@ -17,4 +17,6 @@ public interface BoardService {
         //void updateBoard(BoardEntity boardEntity) throws Exception;
 
         void deleteBoard(long id) throws Exception;
+
+        void deleteAll() throws  Exception;
 }

@@ -9,7 +9,7 @@ import org.springframework.data.convert.Jsr310Converters;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @EnableJpaAuditing
-@EnableAdminServer
+//@EnableAdminServer
 @EntityScan(basePackageClasses = {Jsr310Converters.class},basePackages = {"com.demo.domain"})
 @SpringBootApplication
 public class DomainApplication {

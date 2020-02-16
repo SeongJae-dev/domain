@@ -47,4 +47,9 @@ public class BoardController {
     public void deleteBoard(@PathVariable("id") long id) throws  Exception{
         boardService.deleteBoard(id);
     }
+
+    @RequestMapping(value = "/delete/all", method = RequestMethod.DELETE)
+    public void deleteAll() throws  Exception{
+        boardService.deleteAll();
+    }
 }
