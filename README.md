@@ -2,7 +2,6 @@
 ```
 Springboot 2.2.4v
 ```
-```
 #JPA
 QueryDSL
 ```
